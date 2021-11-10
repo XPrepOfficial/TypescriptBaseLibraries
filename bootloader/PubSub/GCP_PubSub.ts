@@ -18,7 +18,8 @@ class GCP_PubSub
         this.pubSubClient = new PubSub({projectId: process.env.GCP_ProjectId});
         this.subClient = new SubscriberClient({projectId: process.env.GCP_ProjectId});
     }
-
+    
+    /** Pushes messages to Pub/Sub and returns the count of messages published. */
     pushMessages = async(topicName: string, messages: Array<IMessage>) : Promise<string> => {
         try
         {
@@ -43,6 +44,7 @@ class GCP_PubSub
         }        
     }
 
+    /** Pulls messages (synchronously) from a subscription and acknowledges back to GCP. Maximum 500 messages can be pulled at once. */
     pullMessages = async(subscriptionName: string) : Promise<Array<IMessage>> => {
         try
         {
