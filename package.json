@@ -1,0 +1,17 @@
+{
+  "name": "typescriptbasepackages",
+  "version": "1.0.0",
+  "description": "Base package for common functionalities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sarthak Garg",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/pubsub": "^2.18.2",
+    "@types/node": "^16.11.7",
+    "dotenv": "^10.0.0",
+    "typescript": "^4.4.4"
+  }
+}
