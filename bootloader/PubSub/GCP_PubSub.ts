@@ -34,13 +34,19 @@ class GCP_PubSub
                     }
                 }
 
-                const messageId = await this.pubSubClient.topic(topicName).publish(data, customAttribute);
+                let messageId:string = '';
+                if(customAttribute){
+                    messageId = await this.pubSubClient.topic(topicName).publish(data, customAttribute!);
+                }
+                else{
+                    messageId = await this.pubSubClient.topic(topicName).publish(data);
+                }
                 publishedMessageCount++;
             });
             return `${publishedMessageCount} message/s published successfully!`;
         }
         catch(e){
-            throw new Error(e);
+            throw (e as Error).message;
         }        
     }
 
@@ -51,7 +57,7 @@ class GCP_PubSub
             let messages: Array<IMessage> = [];
 
             const subscription = this.subClient.subscriptionPath(
-                process.env.GCP_ProjectId,
+                process.env.GCP_ProjectId!,
                 subscriptionName
             );        
     
@@ -79,7 +85,7 @@ class GCP_PubSub
             return messages;
         }
         catch(e){
-            throw new Error(e);
+            throw (e as Error).message;
         }
     }
 }
