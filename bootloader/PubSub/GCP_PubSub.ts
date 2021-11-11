@@ -6,8 +6,8 @@ import * as dotenv from 'dotenv';
 
 class GCP_PubSub
 {
-    pubSubClient : PubSub;
-    subClient:v1.SubscriberClient;
+    private pubSubClient : PubSub;
+    private subClient : v1.SubscriberClient;
 
     constructor(){
         dotenv.config();
