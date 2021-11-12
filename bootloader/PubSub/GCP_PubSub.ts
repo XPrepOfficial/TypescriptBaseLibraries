@@ -1,4 +1,4 @@
-import { PubSub } from "@google-cloud/pubsub";
+import {PubSub} from "@google-cloud/pubsub";
 import {v1} from "@google-cloud/pubsub";
 import { SubscriberClient } from "@google-cloud/pubsub/build/src/v1";
 import IMessage from "../../Models/IMessage";
