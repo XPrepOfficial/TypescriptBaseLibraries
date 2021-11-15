@@ -4,12 +4,12 @@
   "description": "Base package for common functionalities.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
-    },
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "Sarthak Garg",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-sqs": "^3.41.0",
     "@google-cloud/pubsub": "^2.18.2",
     "@types/node": "^16.11.7",
     "@types/redis": "^2.8.32",
