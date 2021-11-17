@@ -15,6 +15,9 @@ class RedisConnection
         this.connectionObject = redis.createClient(port , host);
         this.connectionObject.on('connect', function() {
             console.log("Redis connection established successfully.");
+        });
+        this.connectionObject.on('error', function(){
+            throw new Error("Cannot connect to Redis Server");
         });    
     }
     catch(e){
